@@ -39,32 +39,45 @@
    git clone https://github.com/omacoder7/news.git
    cd news
 2. Установи зависимости:
-composer install
+   ```bash
+    composer install
 
-3. Создай .env:
-cp .env.example .env
+4. Создай .env:
+   ```bash
+    cp .env.example .env
 
-4. Укажи настройки базы данных в .env, например:
-DB_DATABASE=myNews
-DB_USERNAME=root
-DB_PASSWORD=
+6. Укажи настройки базы данных в .env, например:
+   ```bash
+    DB_DATABASE=myNews
+    DB_USERNAME=root
+    DB_PASSWORD=
 
-5. Сгенерируй ключ и сделай миграции:
-php artisan key:generate
-php artisan migrate --seed
+8. Сгенерируй ключ и сделай миграции:
+   ```bash
+    php artisan key:generate
+    php artisan migrate --seed
 
-6. Запусти сервер:
-php artisan serve
+10. Запусти сервер:
+    ```bash
+    php artisan serve
 
 ---
 
 ## 📡 API
-# Получить список новостей
-GET /api/news
-# Получить конкретную новость
-GET /api/news/{id}
-# Поиск новостей
-GET /api/v1/news?search=технологии
-# Фильтр по автору
-GET /api/v1/news?author=admin
+Получить список новостей:
+     
+    GET /api/news
+    
+Получить конкретную новость:
+    
+    GET /api/news/{id}
+
+Поиск новостей:
+
+    GET /api/v1/news?search=технологии
+
+Фильтр по автору:
+
+    GET /api/v1/news?author=admin
+    
 Ответы возвращаются в JSON и отсортированы по дате (новые — первыми).
